@@ -1,0 +1,1 @@
+import{n as e}from"./createServerFn-CeJX6WxV.js";import{i as t,r as n}from"./index-DY6A0qwe.js";var r=e(),i=function(){let{name:e}=n.useLoaderData();return(0,r.jsx)(t,{page:`main`,recipient:e})};export{i as component};

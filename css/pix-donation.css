@@ -1,0 +1,253 @@
+.pix-donation-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(32rem, calc(100vw - 2rem));
+  max-width: 32rem;
+  max-height: min(90vh, 48rem);
+  margin: auto;
+  overflow-y: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 1.25rem;
+  color: #17211b;
+  background: #fff;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 24%);
+}
+
+.pix-donation-dialog::backdrop {
+  background: rgb(16 24 19 / 64%);
+  backdrop-filter: blur(3px);
+}
+
+.pix-donation-content {
+  padding: 1.5rem;
+}
+
+.pix-donation-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pix-donation-heading h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.pix-donation-description {
+  margin: 0.75rem 0 1.25rem;
+  color: #56635a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pix-donation-close {
+  display: inline-grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  color: #34443a;
+  background: #f0f4f1;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.pix-donation-qr {
+  display: block;
+  width: min(100%, 17rem);
+  height: auto;
+  margin: 0 auto 1.25rem;
+  border-radius: 1rem;
+}
+
+.pix-donation-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.pix-donation-code-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.pix-donation-code {
+  min-width: 0;
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #d8e1da;
+  border-radius: 0.75rem;
+  color: #26362c;
+  background: #f7faf8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.pix-donation-copy {
+  flex: 0 0 auto;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 0.75rem;
+  color: #fff;
+  background: #168447;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pix-donation-copy:hover {
+  background: #116d39;
+}
+
+.pix-donation-copy:focus-visible,
+.pix-donation-close:focus-visible {
+  outline: 3px solid #81c99b;
+  outline-offset: 2px;
+}
+
+.pix-donation-status {
+  min-height: 1.25rem;
+  margin: 0.5rem 0 0;
+  color: #168447;
+  font-size: 0.82rem;
+}
+
+.donation-amount-check {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: var(--color-primary, #168447);
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.donation-minimum-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0.75rem 0 0;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #fecaca;
+  border-radius: 0.85rem;
+  color: #a61b1b;
+  background: #fff4f4;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.donation-minimum-note::before {
+  display: inline-grid;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  place-items: center;
+  margin-top: 0.05rem;
+  border-radius: 999px;
+  color: #fff;
+  background: #c62828;
+  content: "!";
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+@media (max-width: 420px) {
+  .pix-donation-content {
+    padding: 1.25rem;
+  }
+
+  .pix-donation-code-row {
+    flex-direction: column;
+  }
+
+  .pix-donation-copy {
+    min-height: 2.75rem;
+  }
+}
+
+@media (max-width: 420px) {
+  header > div {
+    gap: 0.5rem;
+  }
+
+  header > div > a {
+    min-width: 0;
+    gap: 0.375rem;
+  }
+
+  header > div > a > span:last-child {
+    flex: 0 1 auto;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    letter-spacing: -0.035em;
+  }
+
+  header > div > button.btn-donate {
+    flex: 0 0 auto;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+}
+
+@media (max-width: 359px) {
+  #topo > section:first-of-type button.btn-donate {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 63.999rem) {
+  #topo > div.grid {
+    grid-template-columns: minmax(0, 1fr) 17.5rem;
+    gap: 1.5rem;
+  }
+
+  #topo > div.grid > aside.hidden {
+    display: block !important;
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+  }
+
+  #topo > div.grid > aside.hidden > div.sticky {
+    position: static;
+    top: auto;
+  }
+
+  #doar > div.mt-4.grid.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #topo > div.mx-auto.max-w-6xl.pb-24 {
+    display: none;
+  }
+}
+
+@media (min-width: 64rem) {
+  #topo > div.grid > aside.hidden {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+  }
+
+  #topo > div.grid > aside.hidden > div.sticky {
+    position: static;
+    top: auto;
+  }
+}
